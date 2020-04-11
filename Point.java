@@ -1,3 +1,5 @@
+import java.util.List;
+import java.util.ArrayList;
 class Point {
 	String id
 	double x,y;
@@ -77,4 +79,38 @@ class Point {
     	}
     
 }
+public class Canvas {
+
+    List<Point> points;
+
+    public Canvas(){
+        points = new ArrayList<>();
+    }
+
+    public Canvas(List<Point> points) {
+        this.points = points;
+    }
+
+    public void addNewPoint(Point point) {
+        this.points.add(point);
+    }
+	
+    public void midPoint(List<Point> points)
+    {
+	int n = points.size();
+	double midx,midy;
+	for(Point point : points) 
+	{
+            midx=midx+point.getX();
+            midy=midy+point.getY();
+        }
+	midx=midx/n;
+	midy=midy/n;
+	System.out.println("Point is located at: (" + midx + "," + midy + ")" );
+    }
+    
+
+}
+
+
 
